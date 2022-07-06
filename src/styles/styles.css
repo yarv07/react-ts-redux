@@ -9,36 +9,29 @@ body {
   height: 100px;
   background-color: aqua;
 }
-
-.converter-title, .rates-title {
+.header .converter-title, .header .rates-title {
   margin: 0 auto;
   display: inline;
   text-align: center;
   padding-left: 30px;
-  padding-top: 45px;
+  padding-top: -45px;
   font-size: 30px;
   text-decoration: none;
 }
-
-.converter-title, .rates-title:hover {
+.header .converter-title :hover, .header .rates-title :hover {
   text-decoration: underline;
 }
 
 .containers {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 500px;
   font-size: 30px;
 }
-
-.btn {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#42A1EC), to(#0070C9));
+.containers .btn {
   background-image: linear-gradient(#42A1EC, #0070C9);
   border: 1px solid #0077CC;
   border-radius: 4px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: #FFFFFF;
   cursor: pointer;
   direction: ltr;
@@ -56,58 +49,44 @@ body {
    -ms-user-select: none;
        user-select: none;
   -webkit-user-select: none;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   white-space: nowrap;
 }
-
-.btn:disabled {
+.containers .btn :disabled {
   cursor: default;
   opacity: 0.3;
 }
-
-.btn:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#51A9EE), to(#147BCD));
+.containers .btn :hover {
   background-image: linear-gradient(#51A9EE, #147BCD);
   border-color: #1482D0;
   text-decoration: none;
 }
-
-.btn:active {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#3D94D9), to(#0067B9));
+.containers .btn :active {
   background-image: linear-gradient(#3D94D9, #0067B9);
   border-color: #006DBC;
   outline: none;
 }
-
-.btn:focus {
-  -webkit-box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
-          box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+.containers .btn :focus {
+  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
   outline: none;
 }
-
-.result-text {
+.containers .result-text {
   text-align: center;
   color: #0070C9;
   margin: 0 auto;
 }
-
-.input {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.containers .input {
   display: flex;
   width: 300px;
   font-size: 25px;
 }
-
-.select {
+.containers .select {
   margin-left: 35px;
   padding-left: 15px;
   width: 100px;
   font-size: 25px;
   height: 50px;
 }
-
-.li {
+.containers .li {
   list-style-type: none;
 }/*# sourceMappingURL=styles.css.map */

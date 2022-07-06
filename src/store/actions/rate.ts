@@ -1,8 +1,8 @@
 import { Dispatch } from "redux";
-import { RateDispatchTypes, RATE_LOADING, RATE_FAIL, RATE_SUCCESS } from "./ActionTypes";
+import { RateDispatchTypes, RATE_LOADING, RATE_FAIL, RATE_SUCCESS } from "../actionTypes/rate";
 import axios from "axios";
 
-export const GetRate = (amount:number, currencyFrom:string, currencyTo:string) => async (dispatch: Dispatch<RateDispatchTypes>) => {
+export const getRate = (amount:number, currencyFrom:string, currencyTo:string) => async (dispatch: Dispatch<RateDispatchTypes>) => {
   try {
     dispatch({
       type: RATE_LOADING
@@ -12,11 +12,10 @@ export const GetRate = (amount:number, currencyFrom:string, currencyTo:string) =
       type: RATE_SUCCESS,
       payload: res.data
     })
-
-  } catch (error) {
+  } catch (error:any) {
     dispatch({
-      type: RATE_FAIL
+      type: RATE_FAIL,
+      payload: error.message
     })
-    
   }
 }

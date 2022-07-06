@@ -1,18 +1,9 @@
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import {RootStore} from "./Store";
-import { GetRate } from "./actions/RateActions";
-import { useDispatch } from "react-redux";
-import { RATE_FAIL, RATE_LOADING, RATE_SUCCESS } from "./actions/ActionTypes";
 import {Routes, Route, Link} from 'react-router-dom'
-import Converter from "./components/Converter";
-import CurrentExchangeRates from "./components/CurrentExchangeRates"
-import axios from "axios"
+import Converter from "./routes/converter";
+import CurrentExchangeRates from "./routes/currentExchangeRates"
 import '../src/styles/styles.css'
 
 function App() {
-
-  
   return (
     <>
       <header className="header">
@@ -22,14 +13,9 @@ function App() {
       <div className="containers">
         <Routes>
           <Route path="/" element={<Converter/>}></Route>
-          <Route 
-            path="/rates" 
-            element={
-              <CurrentExchangeRates/>
-            }>
-          </Route>
+          <Route path="/rates" element={<CurrentExchangeRates/>}></Route>
         </Routes>
-        </div>
+      </div>
     </>
   )
 }
